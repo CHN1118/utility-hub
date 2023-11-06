@@ -119,6 +119,7 @@ const dialogVisible = ref(false);
   border: 1px solid @untColor;
   padding: 10px 0;
   border-radius: 4px;
+  font-size: 14px;
   color: @untColor;
   &:hover {
     background: @untColor;
