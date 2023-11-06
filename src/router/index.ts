@@ -1,5 +1,5 @@
 // 管理路由
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import NProgress from "nprogress"; // progress bar
 import "nprogress/nprogress.css"; // progress bar style
 NProgress.configure({ showSpinner: false });
@@ -7,7 +7,7 @@ NProgress.configure({ showSpinner: false });
 import layout from '@/views/layout/index.vue'
 let router = createRouter({
   // 设置路由模式
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   // 设置路由对象
   routes: [
     {

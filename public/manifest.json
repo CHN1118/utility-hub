@@ -1,0 +1,24 @@
+{
+  "name": "UtilityHub",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "description": "UtilityHub",
+  "icons": {
+    "128": "logo.png",
+    "16": "logo.png",
+    "32": "logo.png",
+    "48": "logo.png"
+  },
+  "action": {
+    "default_icon": "logo.png",
+    "default_title": "UtilityHub",
+    "default_popup": "index.html"
+},
+  "permissions": [
+    "tabs",
+    "declarativeContent",
+    "storage",
+    "notifications"
+  ]
+}
+

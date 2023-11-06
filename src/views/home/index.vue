@@ -1,30 +1,36 @@
-<script setup lang='ts' name="HomeView"></script>
+<script setup lang="ts" name="HomeView"></script>
 <template>
   <div class="home_view">
     <div class="container">
-      <h1>Home</h1>
-      <div style="height: 500px;width: 800px;">
-        <BBBOX>
-          <div style="height: 100%;display: flex;justify-content: center;align-items: center;">
-            通用组件 不需要导入直接使用 已经全局注册过了
-          </div>
-        </BBBOX>
-      </div>
+      <el-scrollbar height="600px">
+        <div style="height: 64px"></div>
+        <p v-for="item in 1" :key="item" class="scrollbar-demo-item">
+          {{ item }}
+        </p>
+      </el-scrollbar>
     </div>
   </div>
 </template>
-<style scoped lang='less'>
+<style scoped lang="less">
 .home_view {
-  background: black;
-  min-height: calc(100vh - 80px - 100px);
-
+  height: 600px;
+  width: 357px;
   .container {
-    padding: 60px 0 40px 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
   }
+}
+:global(.el-scrollbar) {
+  --el-scrollbar-opacity: 0;
+  --el-scrollbar-hover-opacity: 0;
+}
+.scrollbar-demo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 4px;
+  background: rgba(192, 243, 255, 0.374);
+  color: var(--el-color-primary);
 }
 </style>
