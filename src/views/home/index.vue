@@ -1,4 +1,28 @@
-<script setup lang="ts" name="HomeView"></script>
+<script setup lang="ts" name="HomeView">
+import useStore from "@/store";
+import Web3 from "web3";
+const { home } = useStore();
+home.init();
+// 检查window.ethereum是否可用
+if (window.ethereum) {
+  // 创建一个Web3实例
+  const web3 = new Web3(window.ethereum);
+
+  try {
+    // 请求用户授权
+    await window.ethereum.request({ method: 'eth_requestAccounts' });
+    // 获取账户
+    const accounts = await web3.eth.getAccounts();
+    console.log('Connected', accounts[0]);
+    // 这里你可以执行后续操作，例如交互合约
+  } catch (error) {
+    console.error('User denied account access');
+  }
+} else {
+  console.log('Please install MetaMask!');
+}
+
+</script>
 <template>
   <div class="home_view">
     <div class="container">
